@@ -1,17 +1,17 @@
-# frida-go
-Go bindings for frida.
+# telco-go
+Go bindings for telco.
 
-For the documentation, visit [https://pkg.go.dev/github.com/frida/frida-go/frida](https://pkg.go.dev/github.com/frida/frida-go/frida).
+For the documentation, visit [https://pkg.go.dev/github.com/telco/telco-go/telco](https://pkg.go.dev/github.com/telco/telco-go/telco).
 
 # Installation
 * `GO111MODULE` needs to be set to `on` or `auto`.
-* Download the _frida-core-devkit_ from the Frida releases [page](https://github.com/frida/frida/releases/) for you operating system and architecture.
+* Download the _telco-core-devkit_ from the Telco releases [page](https://github.com/telco/telco/releases/) for you operating system and architecture.
 * Extract the downloaded archive
-* Copy _frida-core.h_ inside your systems include directory(inside /usr/local/include/) and _libfrida-core.a_ inside your lib directory (usually /usr/local/lib).
+* Copy _telco-core.h_ inside your systems include directory(inside /usr/local/include/) and _libtelco-core.a_ inside your lib directory (usually /usr/local/lib).
 
 To use in your project, just execute: 
 ```bash
-$ go get github.com/frida/frida-go/frida@latest
+$ go get github.com/telco/telco-go/telco@latest
 ```
 
 Supported OS:
@@ -20,7 +20,7 @@ Supported OS:
 - [x] Android
 - [ ] Windows
 
-The reason why windows is not supported it the problem compiling frida-core with mingw because mingw(needed by cgo) can't link with MSVC .lib files.
+The reason why windows is not supported it the problem compiling telco-core with mingw because mingw(needed by cgo) can't link with MSVC .lib files.
 If you manage to do it, feel free to submit your PR, also if you found any issues please submit new issue or create PR with the fix.
 
 # Small example
@@ -30,7 +30,7 @@ package main
 import (
   "bufio"
   "fmt"
-  "github.com/frida/frida-go/frida"
+  "github.com/telco/telco-go/telco"
   "os"
 )
 
@@ -49,7 +49,7 @@ Interceptor.attach(Module.getExportByName(null, 'close'), {
 `
 
 func main() {
-  mgr := frida.NewDeviceManager()
+  mgr := telco.NewDeviceManager()
 
   devices, err := mgr.EnumerateDevices()
   if err != nil {

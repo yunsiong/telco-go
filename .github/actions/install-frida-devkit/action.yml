@@ -1,5 +1,5 @@
-name: Install Frida Devkit
-description: Install Frida Devkit
+name: Install Telco Devkit
+description: Install Telco Devkit
 inputs:
   arch:
     required: true
@@ -14,8 +14,8 @@ runs:
   using: composite
   steps:
     - run: |
-        mkdir /tmp/frida-core-devkit && cd /tmp/frida-core-devkit
-        wget https://github.com/frida/frida/releases/download/${{ inputs.version }}/frida-core-devkit-${{ inputs.version }}-${{ inputs.os }}-${{ inputs.arch }}.tar.xz -O - | tar --extract --xz
-        sudo cp frida-core.h /usr/local/include/frida-core.h
-        sudo cp libfrida-core.a /usr/local/lib/libfrida-core.a
+        mkdir /tmp/telco-core-devkit && cd /tmp/telco-core-devkit
+        wget https://github.com/telco/telco/releases/download/${{ inputs.version }}/telco-core-devkit-${{ inputs.version }}-${{ inputs.os }}-${{ inputs.arch }}.tar.xz -O - | tar --extract --xz
+        sudo cp telco-core.h /usr/local/include/telco-core.h
+        sudo cp libtelco-core.a /usr/local/lib/libtelco-core.a
       shell: bash

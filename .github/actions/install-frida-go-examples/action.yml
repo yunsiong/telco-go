@@ -1,9 +1,9 @@
-name: Install frida-go examples
-description: Install frida-go examples
+name: Install telco-go examples
+description: Install telco-go examples
 runs:
   using: composite
   steps:
     - run: |
-        git clone https://github.com/nsecho/frida-go-examples.git ./frida-go-examples
-        rm ./frida-go-examples/README.md
+        git clone https://github.com/nsecho/telco-go-examples.git ./telco-go-examples
+        rm ./telco-go-examples/README.md
       shell: bash

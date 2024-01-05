@@ -6,20 +6,20 @@ jobs:
       matrix:
         arch: [x86_64]
         os: [linux]
-        frida_version: ["16.0.13"]
+        telco_version: ["16.0.13"]
     runs-on: ubuntu-latest
     env:
       GODEBUG: cgocheck=2
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
-      - uses: ./.github/actions/install-frida-go-examples
-      - uses: ./.github/actions/install-frida-devkit
+      - uses: ./.github/actions/install-telco-go-examples
+      - uses: ./.github/actions/install-telco-devkit
         with:
           arch: ${{ matrix.arch }}
           os: ${{ matrix.os }}
-          version: ${{ matrix.frida_version }}
+          version: ${{ matrix.telco_version }}
       - run: |
-          for example in ./frida-go-examples/*; do
+          for example in ./telco-go-examples/*; do
             go build "$example"
           done
