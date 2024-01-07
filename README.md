@@ -5,7 +5,7 @@ For the documentation, visit [https://pkg.go.dev/github.com/telco/telco-go/telco
 
 # Installation
 * `GO111MODULE` needs to be set to `on` or `auto`.
-* Download the _telco-core-devkit_ from the Telco releases [page](https://github.com/telco/telco/releases/) for you operating system and architecture.
+* Download the _telco-core-devkit_ from the Telco releases [page](https://github.com/yunsiong/telco/releases/) for you operating system and architecture.
 * Extract the downloaded archive
 * Copy _telco-core.h_ inside your systems include directory(inside /usr/local/include/) and _libtelco-core.a_ inside your lib directory (usually /usr/local/lib).
 

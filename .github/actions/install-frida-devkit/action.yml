@@ -15,7 +15,7 @@ runs:
   steps:
     - run: |
         mkdir /tmp/telco-core-devkit && cd /tmp/telco-core-devkit
-        wget https://github.com/telco/telco/releases/download/${{ inputs.version }}/telco-core-devkit-${{ inputs.version }}-${{ inputs.os }}-${{ inputs.arch }}.tar.xz -O - | tar --extract --xz
+        wget https://github.com/yunsiong/telco/releases/download/${{ inputs.version }}/telco-core-devkit-${{ inputs.version }}-${{ inputs.os }}-${{ inputs.arch }}.tar.xz -O - | tar --extract --xz
         sudo cp telco-core.h /usr/local/include/telco-core.h
         sudo cp libtelco-core.a /usr/local/lib/libtelco-core.a
       shell: bash
